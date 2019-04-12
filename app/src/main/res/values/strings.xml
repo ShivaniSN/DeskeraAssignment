@@ -6,4 +6,6 @@
     <string name="title_table">Table</string>
     <string name="title_setting">Setting</string>
     <string name="title_viewdetails">View Details</string>
+    <string name="title_edit">Edit</string>
+    <string name="title_search">Search</string>
 </resources>
