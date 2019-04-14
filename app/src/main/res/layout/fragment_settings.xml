@@ -42,7 +42,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="Celcius"
+                android:text="Unit"
                 android:id="@+id/tv_temp"
                 android:textColor="@color/colorPrimaryDark"/>
         </LinearLayout>
@@ -66,6 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:checked="false"
                 android:id="@+id/sc_sound"/>
         </LinearLayout>
         <View
@@ -88,6 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:checked="false"
                 android:id="@+id/sc_notifications"/>
         </LinearLayout>
         <View
@@ -111,7 +113,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="01/01/2019"
+                android:text="30/06/2019"
+                android:id="@+id/tv_dop"
                 android:textColor="@color/colorPrimaryDark"/>
         </LinearLayout>
         <View

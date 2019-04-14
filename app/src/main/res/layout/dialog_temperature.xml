@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/title_select"
+    android:layout_margin="10dp"
+    android:textSize="15dp"
+    android:textColor="@color/colorPrimaryDark"
+    android:id="@+id/tv_title"/>
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="@string/title_farhenheit"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_title"
+        android:layout_margin="10dp"
+        android:id="@+id/btn_farhenheit"/>
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="@string/title_celcius"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_title"
+        android:layout_margin="10dp"
+        android:textColor="@color/colorWhite"
+        android:id="@+id/btn_celcius"/>
+</RelativeLayout>

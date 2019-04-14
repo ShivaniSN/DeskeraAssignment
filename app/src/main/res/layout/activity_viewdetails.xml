@@ -197,7 +197,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="01/01/2019"
+                    android:text="01/07/2019"
                     android:textColor="@color/colorPrimaryDark"/>
             </LinearLayout>
             <LinearLayout

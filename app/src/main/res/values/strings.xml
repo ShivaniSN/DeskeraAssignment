@@ -8,4 +8,8 @@
     <string name="title_viewdetails">View Details</string>
     <string name="title_edit">Edit</string>
     <string name="title_search">Search</string>
+    <string name="title_farhenheit">Farhenheit</string>
+    <string name="title_celcius">Celcius</string>
+    <string name="title_select">Chose Temperature Display Unit</string>
+    <string name="title_enterdata">Enter Data</string>
 </resources>
