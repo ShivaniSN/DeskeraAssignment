@@ -7,7 +7,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +51,11 @@ public class Fragment_Table extends Fragment{
         itemAdapter = new Adapter_Recycler_Item(itemList);
         sharedPreferences = getContext().getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
 
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(itemAdapter);
+
         imageButtonAddNewData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,14 +83,33 @@ public class Fragment_Table extends Fragment{
         textViewEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getContext(), Activity_EditSave.class);
-                startActivity(i);
+
             }
         });
 
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getContext(), new RecyclerTouchListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Intent i = new Intent(getContext(), Activity_EditSave.class);
+                startActivity(i);
+            }
+        }));
+
         stringItemList = sharedPreferences.getString("itemlist", "");
         Gson gson = new Gson();
-        ListItem itemInfoDtoArray[] = gson.fromJson(stringItemList, ListItem.class);
+        ListItem itemInfoDtoArray[] = gson.fromJson(stringItemList, ListItem[].class);
+
+        int length = itemInfoDtoArray.length;
+        for(int i=0;i<length;i++)
+        {
+            // Get each user info in dto.
+            ListItem userInfoDto = itemInfoDtoArray[i];
+            StringBuffer userInfoBuf = new StringBuffer();
+            userInfoBuf.append(userInfoDto.getStringName());
+            userInfoBuf.append(userInfoDto.getStringCategory());
+            userInfoBuf.append(userInfoDto.getStringDescription());
+
+        }
 
         return view;
     }
