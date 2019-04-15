@@ -16,7 +16,8 @@
             android:textSize="20dp"
             android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp"
+            android:id="@+id/tv_edit"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -62,7 +63,7 @@
             android:layout_marginLeft="10dp"/>
     </RelativeLayout>
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_viewBill"
+        android:id="@+id/recycler_viewItem"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"

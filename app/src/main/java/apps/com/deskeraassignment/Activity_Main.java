@@ -1,5 +1,7 @@
 package apps.com.deskeraassignment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -9,9 +11,16 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Activity_Main extends AppCompatActivity {
 
     private FrameLayout fragment;
+    SharedPreferences sharedPreferences;
+    List<ListItem> listSubscribers = new ArrayList<ListItem>();
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -62,6 +71,69 @@ public class Activity_Main extends AppCompatActivity {
         fragment = (FrameLayout) findViewById(R.id.fragment_frame);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        sharedPreferences = getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
+
+        List<ListItem> initialItemInfoList = initItemInfoList();
+        Gson gson = new Gson();
+        String itemInfoListJsonString = gson.toJson(initialItemInfoList);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("itemlist", itemInfoListJsonString);
+        editor.commit();
     }
 
+    private List<ListItem> initItemInfoList()
+    {
+        List<ListItem> ret = new ArrayList<ListItem>();
+
+        ListItem user1 = new ListItem();
+        user1.setStringName("Grapes");
+        user1.setStringCategory("A");
+        user1.setStringDescription("Fruit");
+        ret.add(user1);
+
+         user1 = new ListItem();
+        user1.setStringName("Tomatos");
+        user1.setStringCategory("B");
+        user1.setStringDescription("Vegetable");
+        ret.add(user1);
+
+         user1 = new ListItem();
+        user1.setStringName("Apple");
+        user1.setStringCategory("A");
+        user1.setStringDescription("Fruit");
+        ret.add(user1);
+
+         user1 = new ListItem();
+        user1.setStringName("Potatoes");
+        user1.setStringCategory("B");
+        user1.setStringDescription("Vegetable");
+        ret.add(user1);
+
+         user1 = new ListItem();
+        user1.setStringName("PineApple");
+        user1.setStringCategory("A");
+        user1.setStringDescription("Fruit");
+        ret.add(user1);
+
+         user1 = new ListItem();
+        user1.setStringName("Cucumber");
+        user1.setStringCategory("B");
+        user1.setStringDescription("Vegetable");
+        ret.add(user1);
+
+         user1 = new ListItem();
+        user1.setStringName("Banana");
+        user1.setStringCategory("A");
+        user1.setStringDescription("Fruit");
+        ret.add(user1);
+
+        user1 = new ListItem();
+        user1.setStringName("Onion");
+        user1.setStringCategory("B");
+        user1.setStringDescription("Vegetable");
+        ret.add(user1);
+
+        return ret;
+    }
 }
