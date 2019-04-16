@@ -3,6 +3,7 @@ package apps.com.deskeraassignment;
 public class ListItem {
 
     String stringName,stringDescription,stringCategory;
+    boolean isFavourite = false;
 
     public ListItem(){
 
@@ -30,5 +31,13 @@ public class ListItem {
 
     public void setStringCategory(String stringCategory) {
         this.stringCategory = stringCategory;
+    }
+
+    public void setFavourite(boolean favourite) {
+        isFavourite = favourite;
+    }
+
+    public boolean getFavourite() {
+        return isFavourite;
     }
 }

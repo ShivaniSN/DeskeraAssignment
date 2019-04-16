@@ -90,48 +90,56 @@ public class Activity_Main extends AppCompatActivity {
         user1.setStringName("Grapes");
         user1.setStringCategory("A");
         user1.setStringDescription("Fruit");
+        user1.setFavourite(false);
         ret.add(user1);
 
          user1 = new ListItem();
         user1.setStringName("Tomatos");
         user1.setStringCategory("B");
         user1.setStringDescription("Vegetable");
+        user1.setFavourite(false);
         ret.add(user1);
 
          user1 = new ListItem();
         user1.setStringName("Apple");
         user1.setStringCategory("A");
         user1.setStringDescription("Fruit");
+        user1.setFavourite(false);
         ret.add(user1);
 
          user1 = new ListItem();
         user1.setStringName("Potatoes");
         user1.setStringCategory("B");
         user1.setStringDescription("Vegetable");
+        user1.setFavourite(false);
         ret.add(user1);
 
          user1 = new ListItem();
         user1.setStringName("PineApple");
         user1.setStringCategory("A");
         user1.setStringDescription("Fruit");
+        user1.setFavourite(false);
         ret.add(user1);
 
          user1 = new ListItem();
         user1.setStringName("Cucumber");
         user1.setStringCategory("B");
         user1.setStringDescription("Vegetable");
+        user1.setFavourite(false);
         ret.add(user1);
 
          user1 = new ListItem();
         user1.setStringName("Banana");
         user1.setStringCategory("A");
         user1.setStringDescription("Fruit");
+        user1.setFavourite(false);
         ret.add(user1);
 
         user1 = new ListItem();
         user1.setStringName("Onion");
         user1.setStringCategory("B");
         user1.setStringDescription("Vegetable");
+        user1.setFavourite(false);
         ret.add(user1);
 
         return ret;

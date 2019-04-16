@@ -21,6 +21,8 @@ public class Activity_EditSave extends AppCompatActivity {
         textViewEditSave = (TextView)findViewById(R.id.tv_editsave);
         textViewTitle = (TextView)findViewById(R.id.tv_title);
 
+        textViewTitle.setText(getIntent().getStringExtra("title"));
+
         imageViewBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

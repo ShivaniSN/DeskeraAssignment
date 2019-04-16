@@ -18,7 +18,7 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Fragment_Favourites extends Fragment{
+public class Fragment_ItemList extends Fragment{
 
     RecyclerView recyclerView;
 
@@ -27,15 +27,15 @@ public class Fragment_Favourites extends Fragment{
     SharedPreferences sharedPreferences;
     String stringItemList = "";
 
-    public static Fragment_Favourites newInstance() {
+    public static Fragment_ItemList newInstance() {
 
-        return new Fragment_Favourites();
+        return new Fragment_ItemList();
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_favourites, container, false);
+        View view =  inflater.inflate(R.layout.fragment_itemlist, container, false);
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_viewItem);
         itemAdapter = new Adapter_Recycler_Favourites(itemList);

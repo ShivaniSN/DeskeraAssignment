@@ -63,7 +63,9 @@ public class Fragment_Table extends Fragment{
                 dialog.setContentView(R.layout.dialog_addnewdata);
 
                 // set the custom dialog components - text, image and button
-                EditText editTextData = (EditText) dialog.findViewById(R.id.et_enterdata);
+                EditText editTextItemName = (EditText) dialog.findViewById(R.id.et_enteritemname);
+                EditText editTextItemDescription = (EditText) dialog.findViewById(R.id.et_enteritemdesc);
+                EditText editTextItemCategory = (EditText) dialog.findViewById(R.id.et_enteritemcateg);
                 Button buttonAdd = (Button) dialog.findViewById(R.id.btn_add);
 
                 // if button is clicked, close the custom dialog
@@ -91,6 +93,7 @@ public class Fragment_Table extends Fragment{
             @Override
             public void onItemClick(View view, int position) {
                 Intent i = new Intent(getContext(), Activity_EditSave.class);
+                i.putExtra("title",itemList.get(position).getStringName());
                 startActivity(i);
             }
         }));
@@ -99,17 +102,18 @@ public class Fragment_Table extends Fragment{
         Gson gson = new Gson();
         ListItem itemInfoDtoArray[] = gson.fromJson(stringItemList, ListItem[].class);
 
-        int length = itemInfoDtoArray.length;
-        for(int i=0;i<length;i++)
+        for(int i=0;i<itemInfoDtoArray.length;i++)
         {
             // Get each user info in dto.
             ListItem userInfoDto = itemInfoDtoArray[i];
-            StringBuffer userInfoBuf = new StringBuffer();
-            userInfoBuf.append(userInfoDto.getStringName());
-            userInfoBuf.append(userInfoDto.getStringCategory());
-            userInfoBuf.append(userInfoDto.getStringDescription());
+            ListItem lp = new ListItem();
+            lp.setStringName(userInfoDto.getStringName());
+            lp.setStringCategory(userInfoDto.getStringCategory());
+            lp.setStringDescription(userInfoDto.getStringDescription());
 
+            itemList.add(lp);
         }
+        itemAdapter.notifyDataSetChanged();
 
         return view;
     }

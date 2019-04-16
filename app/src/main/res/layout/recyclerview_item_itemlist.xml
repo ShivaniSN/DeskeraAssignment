@@ -5,14 +5,16 @@
 <ImageView
     android:layout_width="35dp"
     android:layout_height="35dp"
-    android:background="@drawable/ic_storage_black_24dp"
+    android:background="@drawable/ic_format_list_bulleted_black_24dp"
     android:layout_margin="10dp"
     android:layout_alignParentLeft="true"
-    android:layout_centerInParent="true"/>
+    android:layout_centerInParent="true"
+    android:id="@+id/iv_img"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:layout_toRightOf="@+id/iv_img"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="15dp"
         android:id="@+id/tv_title"/>

@@ -13,5 +13,7 @@
     <string name="title_add">Add</string>
     <string name="title_editsave">Edit/Save</string>
     <string name="title_select">Chose Temperature Display Unit</string>
-    <string name="title_enterdata">Enter Data</string>
+    <string name="title_enteritemname">Item Name</string>
+    <string name="title_enteritemdesc">Item Description</string>
+    <string name="title_enteritemcateg">Item Category</string>
 </resources>
