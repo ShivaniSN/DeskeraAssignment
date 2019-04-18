@@ -25,9 +25,10 @@ public class Fragment_ItemList extends Fragment{
     private Adapter_Recycler_Favourites itemAdapter;
     List<ListItem> itemList = new ArrayList<ListItem>();
     SharedPreferences sharedPreferences;
-    String stringItemList = "";
+    String stringItemList = "",stringFilter = "";
 
-    public static Fragment_ItemList newInstance() {
+    public static Fragment_ItemList newInstance(String stringFilter) {
+        stringFilter = stringFilter;
 
         return new Fragment_ItemList();
     }
